@@ -1,17 +1,17 @@
-import React from "react";
-import styled from "styled-components";
-import Wrapper from "../assets/wrappers/LandingPage";
-import main from "../assets/images/main.svg";
-import { Logo } from "../components";
-import { Link } from "react-router-dom";
-export const Landing = () => {
+import styled from 'styled-components';
+import Wrapper from '../assets/wrappers/LandingPage';
+import main from '../assets/images/main.svg';
+import { Link } from 'react-router-dom';
+import { Logo } from '../components';
+
+const Landing = () => {
   return (
     <Wrapper>
       <nav>
         <Logo />
       </nav>
-      <div className="container page">
-        <div className="info">
+      <div className='container page'>
+        <div className='info'>
           <h1>
             job <span>tracking</span> app
           </h1>
@@ -21,14 +21,14 @@ export const Landing = () => {
             quinoa lo-fi tote bag adaptogen everyday carry meggings +1 brunch
             narwhal.
           </p>
-          <Link to="/register" className="btn register-link">
+          <Link to='/register' className='btn register-link'>
             Register
           </Link>
-          <Link to="/login" className="btn ">
+          <Link to='/login' className='btn '>
             Login / Demo User
           </Link>
         </div>
-        <img src={main} alt="job hunt" className="img main-img" />
+        <img src={main} alt='job hunt' className='img main-img' />
       </div>
     </Wrapper>
   );
