@@ -29,7 +29,6 @@ const DashboardLayout = ({ isDarkThemeEnabled }) => {
   const { user } = useLoaderData();
   const navigate = useNavigate();
   const navigation = useNavigation();
-  const isPageLoading = navigation.state === "loading";
 
   const isPageLoading = navigation.state === "loading";
 
