@@ -7,13 +7,12 @@ import {
 } from "react-router-dom";
 
 import Wrapper from "../assets/wrappers/Dashboard";
-import { Navbar, BigSidebar, SmallSidebar } from "../components";
+import { Navbar, BigSidebar, SmallSidebar, Loading } from "../components";
 import { checkDefaultTheme } from "../App";
 import { useState, createContext, useContext } from "react";
 import customFetch from "../utils/customFetch";
 import { toast } from "react-toastify";
 
-import { Loading } from "../components";
 export const loader = async () => {
   try {
     const { data } = await customFetch("/users/current-user");
@@ -29,7 +28,6 @@ const DashboardLayout = ({ isDarkThemeEnabled }) => {
   const { user } = useLoaderData();
   const navigate = useNavigate();
   const navigation = useNavigation();
-
   const isPageLoading = navigation.state === "loading";
 
   const [showSidebar, setShowSidebar] = useState(false);
