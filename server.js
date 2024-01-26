@@ -41,9 +41,10 @@ app.get("/api/v1/test", (req, res) => {
 });
 7;
 
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "./public", "index.html"));
-});
+app.use(express.static(path.resolve(__dirname, "./client/dist")));
+// app.get("*", (req, res) => {
+//   res.sendFile(path.resolve(__dirname, "./public", "index.html"));
+// });
 
 app.get("*", (req, res) => {
   res.status(400).json({ msg: "not route found" });
