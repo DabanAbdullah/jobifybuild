@@ -69,10 +69,9 @@ const DashboardLayout = ({ isDarkThemeEnabled }) => {
           <BigSidebar />
           <div>
             <Navbar />
+
             <div className="dashboard-page">
-              <div className="dashboard-page">
-                {isPageLoading ? <Loading /> : <Outlet context={{ user }} />}
-              </div>
+              {isPageLoading ? <Loading /> : <Outlet context={{ user }} />}
             </div>
           </div>
         </main>
