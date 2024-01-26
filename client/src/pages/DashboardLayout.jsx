@@ -7,6 +7,7 @@ import { useState, createContext, useContext } from "react";
 import customFetch from "../utils/customFetch";
 import { toast } from "react-toastify";
 
+import { Loading } from "../components";
 export const loader = async () => {
   try {
     const { data } = await customFetch("/users/current-user");
@@ -21,6 +22,8 @@ const DashboardLayout = ({ isDarkThemeEnabled }) => {
   // temp
   const { user } = useLoaderData();
   const navigate = useNavigate();
+
+  const isPageLoading = navigation.state === "loading";
 
   const [showSidebar, setShowSidebar] = useState(false);
   const [isDarkTheme, setIsDarkTheme] = useState(checkDefaultTheme());
@@ -60,7 +63,9 @@ const DashboardLayout = ({ isDarkThemeEnabled }) => {
           <div>
             <Navbar />
             <div className="dashboard-page">
-              <Outlet context={{ user }} />
+              <div className="dashboard-page">
+                {isPageLoading ? <Loading /> : <Outlet context={{ user }} />}
+              </div>
             </div>
           </div>
         </main>
