@@ -31,6 +31,8 @@ const DashboardLayout = ({ isDarkThemeEnabled }) => {
   const navigation = useNavigation();
   const isPageLoading = navigation.state === "loading";
 
+  const isPageLoading = navigation.state === "loading";
+
   const [showSidebar, setShowSidebar] = useState(false);
   const [isDarkTheme, setIsDarkTheme] = useState(checkDefaultTheme());
 
